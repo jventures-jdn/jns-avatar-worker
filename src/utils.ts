@@ -143,12 +143,12 @@ export const getOwnersAndAvailable = async (
   name: string
 ) => {
   const wrapperAddress = JSON.parse(env.WRAPPER_ADDRESS)[network];
-  const endpoint = env.BASE_WEB3_ENDPOINT + "/" + network;
+  const endpoint = env.BASE_WEB3_ENDPOINT;
 
   const labels = name.split(".");
   const nameHash = namehash(name);
   const labelHash = labelhash(labels[0]);
-  const isDotETH2ld = labels.length === 2 && labels[1] === "eth";
+  const isDotETH2ld = labels.length === 2 && labels[1] === "jfin";
 
   const registryCall: RegistryCall = {
     address: env.REGISTRY_ADDRESS,
